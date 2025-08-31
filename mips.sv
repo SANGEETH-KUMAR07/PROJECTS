@@ -1,4 +1,4 @@
-module computer #(
+module mips #(
    parameter WIDTH=32
  ) (
    clk,reset,inst,pc_out,aluout,memout
