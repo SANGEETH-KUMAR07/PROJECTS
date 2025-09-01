@@ -2,13 +2,15 @@
 
 ## Overview
 
-This repository contains code projects with detailed explanations and supporting diagrams. The documentation and diagrams help users understand the code structure, workflow, and output. Key explanations are supplemented by diagrams found in the included PDFs: `info.pdf` and `outputs.pdf`.
+This repository contains multiple hardware projects, each with its own source files and documentation. Each project is organized in its own directory or as a major file in the root, with supporting diagrams and explanations.
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
 - [Project Structure](#project-structure)
+- [MIPS Project](#mips-project)
+- [UART Project](#uart-project)
 - [Code Explanation](#code-explanation)
 - [Diagrams](#diagrams)
 - [Getting Started](#getting-started)
@@ -17,51 +19,58 @@ This repository contains code projects with detailed explanations and supporting
 
 ## Features
 
-- Well-organized codebase for easy navigation.
-- Step-by-step explanations of the code logic.
-- Visual diagrams illustrating the architecture and output flow.
-- Example outputs and references for further clarity.
+- Multiple hardware design projects in one repository.
+- Well-documented source code and modules.
+- Supporting diagrams for architecture and data flow.
+- Example outputs and references for clarity.
 
 ## Project Structure
 
 ```plaintext
 PROJECTS/
-├── src/             # Source code files
-├── info.pdf         # Contains code architecture and workflow diagrams
-├── outputs.pdf      # Contains output diagrams and data flow
-├── README.md        # Project documentation
-└── ...              # Other files and folders
+├── src/                # Other source code files
+├── mips.sv             # MIPS processor top-level SystemVerilog file (standalone project)
+├── uart/               # UART project directory
+│   ├── uart_xmt.sv     # UART transmitter module
+│   ├── uart_rcv.sv     # UART receiver module
+│   └── uart.sv         # Top-level UART module
+├── info.pdf            # Diagrams for architecture/workflow
+├── outputs.pdf         # Output diagrams and data flow
+├── README.md           # Project documentation
+└── ...                 # Other files/folders
 ```
+
+## MIPS Project
+
+The `mips.sv` file implements a standalone MIPS processor in SystemVerilog.  
+Features:
+- Implements a basic MIPS CPU architecture.
+- Suitable for simulation, learning, and extension.
+- See comments in `mips.sv` and `info.pdf` for architecture and workflow details.
+
+## UART Project
+
+The `uart` directory contains a complete Universal Asynchronous Receiver/Transmitter (UART) implementation:
+
+- **uart_xmt.sv**: UART transmitter module—serializes data for transmission.
+- **uart_rcv.sv**: UART receiver module—deserializes incoming serial data.
+- **uart.sv**: Top-level UART module—connects the transmitter and receiver.
+
+Features:
+- Modular design for easy reuse and integration.
+- Configurable baud rates and parameters.
+- See diagrams in `info.pdf` for module relationships.
 
 ## Code Explanation
 
-- The core logic is implemented in the `src/` directory.
-- Each module/file is documented with comments for better understanding.
-- The workflow and architecture are visually represented in the diagrams found in `info.pdf`.
-- Example outputs and their explanations are included in `outputs.pdf`.
-
-### Example Workflow (as per info.pdf)
-
-<!-- If you extract images from info.pdf, embed them like this: -->
-<!-- ![Architecture Diagram](docs/architecture-diagram.png) -->
-
-1. **Initialization:** The program starts by initializing key parameters and modules.
-2. **Execution:** The main process runs according to the logic described in the source files.
-3. **Output Generation:** Results are produced and visualized as shown in the diagrams in `outputs.pdf`.
-
-### Example Output (as per outputs.pdf)
-
-- The output diagrams illustrate how data flows through the program and what the expected results are for sample inputs.
+- Each project (MIPS, UART) is organized and documented separately.
+- Source files contain comments for code clarity.
+- Diagrams provide additional explanation for architecture and workflows.
 
 ## Diagrams
 
-- **Architecture and Workflow:**  
-  Refer to [`info.pdf`](./info.pdf) for system architecture, module relationships, and workflow diagrams.
-
-- **Output and Data Flow:**  
-  Refer to [`outputs.pdf`](./outputs.pdf) for diagrams showing output formats, data flow, and sample results.
-
-> **Tip:** To view diagrams inline, you may extract images from the PDFs and embed them in this README using the Markdown `![]()` syntax.
+- **Architecture/Workflow:** See [`info.pdf`](./info.pdf)
+- **Output/Data Flow:** See [`outputs.pdf`](./outputs.pdf)
 
 ## Getting Started
 
@@ -71,28 +80,20 @@ PROJECTS/
    cd PROJECTS
    ```
 
-2. **Install dependencies:**
-   ```sh
-   # Example for Python projects
-   pip install -r requirements.txt
-   ```
+2. **Explore the projects:**
+   - For the MIPS processor: open and review `mips.sv`
+   - For the UART modules: see the `uart/` directory
 
-3. **Run the main program:**
-   ```sh
-   # Adjust this command as per your entry script
-   python src/main.py
-   ```
-
-4. **Explore diagrams:**  
-   Open `info.pdf` and `outputs.pdf` for visual references to the codebase and outputs.
+3. **View diagrams:**  
+   Open `info.pdf` and `outputs.pdf` for project visuals.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
+Contributions are welcome! Open an issue or submit a pull request.
 
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
-For any questions or clarifications, refer to the code comments, or check the diagrams in `info.pdf` and `outputs.pdf`.
+For questions, see code comments and diagrams in the repository.
