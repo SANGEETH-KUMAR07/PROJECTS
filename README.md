@@ -29,7 +29,7 @@ This repository contains multiple hardware projects, each with its own source fi
 ```plaintext
 PROJECTS/
 ├── src/                # Other source code files
-├── mips.sv             # MIPS processor top-level SystemVerilog file (standalone project)
+├── mips.v              # MIPS processor top-level Verilog file 
 ├── uart/               # UART project directory
 │   ├── uart_xmt.sv     # UART transmitter module
 │   ├── uart_rcv.sv     # UART receiver module
@@ -42,11 +42,11 @@ PROJECTS/
 
 ## MIPS Project
 
-The `mips.sv` file implements a standalone MIPS processor in SystemVerilog.  
+The `mips.v` file implements a standalone MIPS processor in SystemVerilog and Verilog.  
 Features:
 - Implements a basic MIPS CPU architecture.
 - Suitable for simulation, learning, and extension.
-- See comments in `mips.sv` and `info.pdf` for architecture and workflow details.
+- See comments in `mips.v` and `info.pdf` for architecture and workflow details.
 
 ## UART Project
 
@@ -81,7 +81,7 @@ Features:
    ```
 
 2. **Explore the projects:**
-   - For the MIPS processor: open and review `mips.sv`
+   - For the MIPS processor: open and review `mips.v`
    - For the UART modules: see the `uart/` directory
 
 3. **View diagrams:**  
